@@ -10,9 +10,9 @@ public class DeckTest extends TestCase {
 
 		assertTrue(deck.getDeck().isEmpty());
 		deck.create();
-		assertTrue(!deck.getDeck().isEmpty());
+		assertFalse(deck.getDeck().isEmpty());
 	}
-	
+
 	public void testShuffle() {
 		Deck deck = new Deck();
 		Deck shuffledDeck = new Deck();
