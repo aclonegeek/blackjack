@@ -11,12 +11,16 @@ public class DeckTest extends TestCase {
 		assertTrue(deck.getDeck().isEmpty());
 		deck.create();
 		assertFalse(deck.getDeck().isEmpty());
+		assertTrue(deck.getDeck().size() == 52);
 	}
 
 	public void testShuffle() {
 		Deck deck = new Deck();
 		Deck shuffledDeck = new Deck();
+		deck.create();
+		shuffledDeck.create();
 
+		assertEquals(deck.getDeck(), shuffledDeck.getDeck());
 		shuffledDeck.shuffle();
 		assertNotEquals(deck, shuffledDeck);
 	}
