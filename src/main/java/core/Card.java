@@ -9,6 +9,10 @@ public class Card {
 		this.rank = rank;
 	}
 
+	public String toString() {
+		return this.suit + this.rank;
+	}
+
 	public char getSuit() {
 		return this.suit;
 	}
