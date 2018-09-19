@@ -2,12 +2,18 @@ package core;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Hand {
 	private List<Card> hand;
 
 	Hand() {
 		this.hand = new ArrayList<>();
+	}
+
+	public String toString() {
+		// Code inspired from: https://www.baeldung.com/java-list-to-string
+		return this.hand.stream().map(Object::toString).collect(Collectors.joining(", ", "[", "]"));
 	}
 
 	public List<Card> getHand() {
