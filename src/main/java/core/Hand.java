@@ -54,4 +54,8 @@ public class Hand {
 	public void addCard(Card card) {
 		this.hand.add(card);
 	}
+
+	public Card popCard() {
+		return this.hand.remove(this.hand.size() - 1);
+	}
 }
