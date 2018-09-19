@@ -3,6 +3,21 @@ package core;
 import junit.framework.TestCase;
 
 public class HandTest extends TestCase {
+	public void testToString() {
+		Card hearts3 = new Card('H', "3");
+		Card spadesJack = new Card('S', "J");
+		Card diamondsAce = new Card('D', "A");
+
+		Hand hand = new Hand();
+		hand.addCard(hearts3);
+		hand.addCard(spadesJack);
+		hand.addCard(diamondsAce);
+		assertEquals(hand.toString(), "[H3, SJ, DA]");
+
+		Hand hand2 = new Hand();
+		assertEquals(hand2.toString(), "[]");
+	}
+
 	public void testGetTotal() {
 		Card hearts3 = new Card('H', "3");
 		Card clubs9 = new Card('C', "9");
