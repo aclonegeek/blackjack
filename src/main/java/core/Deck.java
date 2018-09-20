@@ -23,6 +23,12 @@ public class Deck {
 		}
 	}
 
+    public void create(List<Card> cards) {
+        for (Card card : cards) {
+            this.deck.add(card);
+        }
+    }
+
 	public Card draw() {
 		return this.deck.remove(0);
 	}
