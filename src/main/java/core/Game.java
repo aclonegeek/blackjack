@@ -145,7 +145,6 @@ public class Game {
             System.out.println();
 
             if (this.choice.equals("H")) {
-                //                System.out.println("Player hits.");
                 this.player.hit(this.deck.draw());
                 this.player.outputHandWithTotal(this.player.getCurrentHand());
             } else if (this.choice.equals("S")) {
@@ -250,11 +249,6 @@ public class Game {
         } else {
             this.choice = file;
         }
-        // this.choice = "/home/randy/Downloads/dealer_and_player_blackjack.txt";
-        // this.choice = "/home/randy/Downloads/dealer_bust_player_wins.txt";
-        // this.choice = "/home/randy/Downloads/player_and_dealer_stand_player_wins.txt";
-        // this.choice = "/home/randy/Downloads/player_splits_and_wins.txt";
-        // this.choice = "/home/randy/Downloads/dealer_splits_and_player_wins.txt";
 
         String contents = this.readFile(this.choice);
         if (contents.equals("error")) {
