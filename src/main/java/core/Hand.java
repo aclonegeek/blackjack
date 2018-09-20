@@ -6,9 +6,11 @@ import java.util.stream.Collectors;
 
 public class Hand {
 	private List<Card> hand;
+	private boolean hasSoftHand;
 
 	Hand() {
 		this.hand = new ArrayList<>();
+		this.hasSoftHand = false;
 	}
 
 	public String toString() {
@@ -18,6 +20,10 @@ public class Hand {
 
 	public List<Card> getHand() {
 		return this.hand;
+	}
+
+	public boolean hasSoftHand() {
+		return this.hasSoftHand;
 	}
 
 	public int getTotal() {
@@ -31,10 +37,10 @@ public class Hand {
 			if (rank.chars().allMatch(Character::isDigit)) {
 				total += Integer.parseInt(rank);
 			// Jack, Queen, King.
-			} else if (rank == "J" || rank == "Q" || rank == "K" ) {
+			} else if (rank.equals("J") || rank.equals("Q") || rank.equals("K") ) {
 				total += 10;
 			// Ace.
-			} else if (rank == "A") {
+			} else if (rank.equals("A")) {
 				// We will deal with aces after everything else has been calculated.
 				aces.add(card);
 			}
@@ -50,6 +56,7 @@ public class Hand {
 					total += 1;
 				} else {
 					total += 11;
+					this.hasSoftHand = true;
 				}
 			}
 		}
